@@ -1,0 +1,53 @@
+// // width: 100%;
+// // max-width: 36.625rem;
+
+@import "../styles.scss";
+
+.InputFieldWrapper {
+  position: relative;
+  background: var(--col-black-light);
+  border: 1px solid var(--col-gray-light);
+  border-radius: 0.4rem;
+  color: transparent;
+
+  .InputFieldLabel {
+    @include smaller-paragraph;
+    position: absolute;
+    top: 1.6rem;
+    left: 1.6rem;
+
+    color: var(--col-white-light);
+    white-space: nowrap;
+    pointer-events: none;
+    user-select: none;
+
+    transition-timing-function: cubic-bezier(0.9, 0, 0.51, 1);
+    transition-property: top, font-size, line-height;
+    transition-duration: 250ms;
+  }
+
+  .InputFieldElements {
+    @include smaller-paragraph;
+    color: var(--col-white);
+    fill: currentcolor;
+    min-width: 20rem;
+    width: 100%;
+
+    .InputFieldElement {
+      @include smaller-paragraph;
+      width: 100%;
+      color: inherit;
+      padding: 2.4rem 1.6rem 0.8rem;
+      min-height: 1.6rem;
+      min-width: 1.6rem;
+      background: transparent;
+      border: none;
+
+      &:focus-visible {
+        outline: 2px solid var(--col-white);
+        outline-offset: 3px;
+        border-radius: 3px;
+      }
+    }
+  }
+}

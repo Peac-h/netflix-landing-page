@@ -1,0 +1,50 @@
+@import "../styles.scss";
+
+.languageSelectorWrapper {
+  @include smaller-paragraph;
+  color: var(--col-white);
+
+  .languageSelectorButton {
+    position: relative;
+  }
+
+  .languageSelectorElements {
+    appearance: none;
+    font-size: inherit;
+    color: inherit;
+    background: transparent;
+    border-radius: 0.4rem;
+    line-height: 2rem;
+    padding: 0.6rem 3.6rem;
+    padding-right: 3.9rem;
+
+    &:focus-visible {
+      outline: 2px solid var(--col-white);
+      outline-offset: 3px;
+      border-radius: 3px;
+    }
+  }
+
+  .languageSelectorIcon {
+    position: absolute;
+    pointer-events: none;
+    height: 1.6rem;
+    width: 1.6rem;
+  }
+
+  .languageSelectorIconLeft {
+    top: 0.8rem;
+    left: 1.2rem;
+  }
+
+  .languageSelectorIconRight {
+    left: 10.7rem;
+    top: 0.9rem;
+  }
+
+  svg {
+    width: 16;
+    height: 16;
+    fill: none;
+  }
+}
