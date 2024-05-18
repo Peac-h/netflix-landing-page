@@ -40,11 +40,3 @@ export function Button({
     </button>
   );
 }
-
-//     <Button variant="getStarted" icon="chevronRight">
-//       <span>Get Started</span>
-//     </Button>
-
-//     <Button variant="signIn" href="#">
-//       <span>Sign In</span>
-//     </Button>

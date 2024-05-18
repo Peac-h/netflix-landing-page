@@ -3,22 +3,54 @@
   --col-white-light: rgba(255, 255, 255, 0.7);
   --col-black: #000;
   --col-black-light: rgba(22, 22, 22, 0.7);
+  --col-black-lighter: rgb(0 0 0 / 40%);
   --col-main-red: #e50914;
   --col-main-dark-red: #c11119;
+  --col-main-darkest-red: #99161d;
   --col-gray-dark: #232323;
   --col-gray-light: rgba(128, 128, 128, 0.7);
+  --overlay-gradient: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8) 0,
+    rgba(0, 0, 0, 0) 60%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
 }
 
 // Mixins
 // Fonts
+@mixin big-header--bold {
+  font-size: 4.8rem;
+  font-weight: 900;
+
+  @media screen and (max-width: 960px) {
+    font-size: 3.2rem;
+  }
+}
 @mixin regular-paragraph {
   font-size: 2.4rem;
   font-weight: 400;
+
+  @media screen and (max-width: 960px) {
+    font-size: 1.8rem;
+  }
+}
+@mixin regular-paragraph--bold {
+  font-size: 2.4rem;
+  font-weight: 500;
+
+  @media screen and (max-width: 600px) {
+    font-size: 1.8rem;
+  }
 }
 @mixin small-paragraph {
   font-size: 2rem;
   font-weight: 400;
   line-height: 1.5;
+
+  @media screen and (max-width: 960px) {
+    font-size: 1.8rem;
+  }
 }
 @mixin smaller-paragraph {
   font-size: 1.6rem;
@@ -35,6 +67,10 @@
   width: 100%;
   height: 0.8rem;
   background: var(--col-gray-dark);
+
+  position: absolute;
+  left: 0;
+  bottom: -0.8rem;
 }
 
 // Fonts
@@ -74,11 +110,11 @@ body {
   font-family: "sans";
   @include regular-paragraph;
   background: var(--col-black);
+  max-width: 100%;
 
   h1,
   h2 {
-    font-size: 4.8rem;
-    font-weight: 900;
+    @include big-header--bold;
   }
 
   button {
@@ -91,6 +127,8 @@ body {
     color: inherit;
     text-decoration: none;
   }
+
+  // Reusables
 
   .horizontalLine {
     @include hr-rule;

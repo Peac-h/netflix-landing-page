@@ -1,0 +1,46 @@
+@import "../styles.scss";
+
+.getStartedFormWrapper {
+  padding: 0 3.2rem;
+
+  @media screen and (max-width: 600px) {
+    padding: 0 2.4rem;
+  }
+}
+
+.formBody {
+  display: flex;
+  gap: 0.8rem;
+
+  width: 100%;
+  max-width: 58.6rem;
+
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+    gap: 1.6rem;
+  }
+}
+
+.formWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.formHeader {
+  @include small-paragraph;
+}
+
+.formInput {
+  flex: 1 1 auto;
+}
+
+.formButton {
+  display: flex;
+  align-items: center;
+
+  @media screen and (max-width: 600px) {
+    align-self: center;
+  }
+}
