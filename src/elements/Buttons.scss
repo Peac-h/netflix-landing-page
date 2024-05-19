@@ -7,6 +7,7 @@
   border: 0px;
   border-radius: 0.4rem;
   font-weight: 500;
+  line-height: 1;
   cursor: pointer;
 
   transition-duration: 250ms;
@@ -34,7 +35,7 @@
 
   &--getStarted {
     @include regular-paragraph--bold;
-    padding: 1.2rem 2.4rem;
+    padding: 1.6rem 2.4rem;
 
     svg {
       width: 2.4rem;

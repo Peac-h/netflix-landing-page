@@ -18,6 +18,41 @@
 }
 
 // Mixins
+// Layout
+@mixin main-layout {
+  @media screen and (min-width: 1280px) {
+    max-width: calc(83.33333333333334% - 3.2rem);
+  }
+  @media screen and (min-width: 1920px) {
+    max-width: calc(66.66666666666666% - 3.2rem);
+  }
+}
+@mixin header-height {
+  min-height: 70rem;
+
+  @media screen and (max-width: 960px) {
+    min-height: 51.2rem;
+  }
+  @media screen and (max-width: 600px) {
+    min-height: 48rem;
+  }
+}
+@mixin hero-position {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 15.8rem 3.2rem 6.4rem;
+
+  @media screen and (max-width: 960px) {
+    padding: 13.6rem 3.2rem 4.8rem;
+  }
+  @media screen and (max-width: 600px) {
+    padding: 12rem 2.4rem 3.2rem;
+  }
+}
+
 // Fonts
 @mixin big-header--bold {
   font-size: 4.8rem;
@@ -25,6 +60,7 @@
 
   @media screen and (max-width: 960px) {
     font-size: 3.2rem;
+    font-weight: 700;
   }
 }
 @mixin regular-paragraph {
@@ -57,9 +93,21 @@
   font-weight: 400;
   line-height: 1.5;
 }
+@mixin smaller-paragraph--bold {
+  font-size: 1.6rem;
+  font-weight: 500;
+
+  @media screen and (max-width: 960px) {
+    font-size: 1.4rem;
+  }
+}
 @mixin smallest-paragraph {
   font-size: 1.4rem;
   font-weight: 400;
+
+  @media screen and (max-width: 960px) {
+    font-size: 1.2rem;
+  }
 }
 
 // Elements
@@ -74,6 +122,12 @@
 }
 
 // Fonts
+@font-face {
+  font-family: "sans";
+  src: url(../src/font/NetflixSans_W_Blk.woff2);
+  font-weight: 900;
+  font-style: normal;
+}
 @font-face {
   font-family: "sans";
   src: url(../src/font/NetflixSans_W_Bd.woff2);
@@ -103,7 +157,6 @@
 html {
   font-size: 62.5%;
   box-sizing: border-box;
-  user-select: none;
 }
 
 body {
@@ -111,6 +164,7 @@ body {
   @include regular-paragraph;
   background: var(--col-black);
   max-width: 100%;
+  color: var(--col-white);
 
   h1,
   h2 {
@@ -129,8 +183,7 @@ body {
   }
 
   // Reusables
-
-  .horizontalLine {
+  .divider {
     @include hr-rule;
   }
 }

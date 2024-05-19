@@ -1,22 +1,24 @@
 @import "../styles.scss";
 
-.languageSelectorWrapper {
-  @include smaller-paragraph;
-  color: var(--col-white);
+.language-selector {
+  &-container {
+    @include smaller-paragraph;
+    color: var(--col-white);
+  }
 
-  .languageSelectorButton {
+  &-button {
     position: relative;
   }
 
-  .languageSelectorElements {
+  &-elements {
     appearance: none;
-    font-size: inherit;
+    font: inherit;
     color: inherit;
     background: transparent;
+    border: 1px solid var(--col-gray-light);
     border-radius: 0.4rem;
     line-height: 2rem;
-    padding: 0.6rem 3.6rem;
-    padding-right: 3.9rem;
+    padding: 0.5rem 3.5rem;
     background: var(--col-black-light);
 
     &:focus-visible {
@@ -30,30 +32,30 @@
     }
   }
 
-  .languageSelectorIcon {
+  &-icon {
     position: absolute;
     pointer-events: none;
     height: 1.6rem;
     width: 1.6rem;
-  }
 
-  .languageSelectorIconLeft {
-    top: 0.8rem;
-    left: 1.2rem;
-  }
-
-  .languageSelectorIconRight {
-    left: 10.7rem;
-    top: 0.9rem;
-
-    @media screen and (max-width: 600px) {
-      left: 3.5rem;
+    svg {
+      width: 16;
+      height: 16;
+      fill: none;
     }
-  }
 
-  svg {
-    width: 16;
-    height: 16;
-    fill: none;
+    &--left {
+      top: 0.6rem;
+      left: 1.2rem;
+    }
+
+    &--right {
+      left: 10.7rem;
+      top: 0.7rem;
+
+      @media screen and (max-width: 600px) {
+        left: 3.5rem;
+      }
+    }
   }
 }

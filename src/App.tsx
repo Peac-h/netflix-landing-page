@@ -1,16 +1,11 @@
 import { Header } from "./components/Header";
+import { Main } from "./components/Main";
 
 function App() {
   return (
     <>
       <Header />
-      <main>
-        <section></section>
-        <section></section>
-        <section></section>
-        <section></section>
-        <section></section>
-      </main>
+      <Main />
       <footer></footer>
     </>
   );

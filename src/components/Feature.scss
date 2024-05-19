@@ -1,0 +1,76 @@
+@import "../styles.scss";
+
+.feature {
+  position: relative;
+
+  &-content {
+    @include main-layout;
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    margin: auto;
+    padding: 6rem 3.2rem 7rem;
+
+    @media screen and (max-width: 960px) {
+      flex-direction: column;
+      text-align: center;
+      padding: 8.6rem 3.2rem 7.2rem;
+    }
+    @media screen and (max-width: 600px) {
+      padding: 7rem 2.4rem 5.5rem;
+    }
+
+    &.reverse {
+      flex-direction: row-reverse;
+      @media screen and (max-width: 960px) {
+        flex-direction: column;
+      }
+    }
+  }
+
+  &-text {
+    &-container {
+      flex-basis: 50%;
+      display: flex;
+      flex-direction: column;
+      gap: 1.6rem;
+      margin-top: -1.4rem;
+    }
+  }
+
+  &-media {
+    &-container {
+      flex-basis: 50%;
+      position: relative;
+      padding-top: 1.2rem;
+    }
+
+    &-image {
+      width: 100%;
+      height: auto;
+    }
+
+    &-video {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+      overflow: hidden;
+      display: inline-block;
+      vertical-align: baseline;
+
+      &--first {
+        top: 46%;
+        max-width: 73%;
+        max-height: 54%;
+      }
+      &--second {
+        top: 34%;
+        max-width: 63%;
+        max-height: 47%;
+      }
+    }
+  }
+}

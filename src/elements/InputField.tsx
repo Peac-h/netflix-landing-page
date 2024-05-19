@@ -34,17 +34,17 @@ export function InputField({
   };
 
   return (
-    <div className={`InputFieldWrapper ${className}`}>
+    <div className={`input-field-container ${className}`}>
       <label
         htmlFor={`${name}Input`}
-        className="InputFieldLabel"
+        className="input-field-label"
         style={
           isFocused || inputValue ? { top: ".8rem", fontSize: "1.2rem" } : {}
         }
       >
         {label}
       </label>
-      <div className="InputFieldElements">
+      <div className="input-field-elements">
         <input
           autoComplete={autoComplete || name}
           minLength={minLength}
@@ -56,12 +56,12 @@ export function InputField({
           onChange={handleInputChange}
           onFocus={() => setIsFocused(true)}
           onBlur={() => setIsFocused(false)}
-          className={`InputFieldElement ${error ? "InputFieldError" : ""}`}
+          className={`input-field-element ${error ? "input-field-error" : ""}`}
           aria-invalid={!!error}
           aria-describedby={error ? `${name}Error` : undefined}
         />
         {error && (
-          <span id={`${name}Error`} className="InputFieldErrorText">
+          <span id={`${name}Error`} className="input-field-error-text">
             {error}
           </span>
         )}

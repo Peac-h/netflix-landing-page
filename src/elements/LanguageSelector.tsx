@@ -14,14 +14,14 @@ const LANGUAGES = [
 
 export function LanguageSelector() {
   return (
-    <div className="languageSelectorWrapper">
-      <div className="languageSelectorButton">
-        <span className="languageSelectorIcon languageSelectorIconLeft">
+    <div className="language-selector-container">
+      <div className="language-selector-button">
+        <span className="language-selector-icon language-selector-icon--left">
           <SVGs name="language" />
         </span>
 
         <select
-          className="languageSelectorElements"
+          className="language-selector-elements"
           aria-label="Select Language"
         >
           {LANGUAGES.map((language) => (
@@ -30,14 +30,14 @@ export function LanguageSelector() {
               lang={language.code}
               label={language.language}
               value={language.code}
-              className="languageSelectorElement"
+              className="language-selector-element"
             >
               {language.language}
             </option>
           ))}
         </select>
 
-        <span className="languageSelectorIcon languageSelectorIconRight">
+        <span className="language-selector-icon language-selector-icon--right">
           <SVGs name="caretDown" />
         </span>
       </div>
