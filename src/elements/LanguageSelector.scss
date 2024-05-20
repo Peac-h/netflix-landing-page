@@ -28,7 +28,8 @@
     }
 
     @media screen and (max-width: 600px) {
-      width: 1rem !important;
+      width: 1rem;
+      padding: 0.5rem 3.1rem;
     }
   }
 
@@ -37,12 +38,6 @@
     pointer-events: none;
     height: 1.6rem;
     width: 1.6rem;
-
-    svg {
-      width: 16;
-      height: 16;
-      fill: none;
-    }
 
     &--left {
       top: 0.6rem;

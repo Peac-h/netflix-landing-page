@@ -14,8 +14,8 @@
     @media screen and (max-width: 960px) {
       gap: 2.2rem;
     }
-    @media screen and (max-width: 960px) {
-      padding: 5.5rem 2.4rem;
+    @media screen and (max-width: 600px) {
+      padding: 5.6rem 2.4rem;
     }
   }
 
@@ -25,7 +25,7 @@
 
   &-list {
     &-container {
-      margin-bottom: 2.4rem;
+      margin-bottom: 2.2rem;
     }
 
     & {
@@ -35,8 +35,6 @@
     }
 
     &-item {
-      list-style: none;
-
       &-header {
         padding: 2rem;
         background-color: rgb(45, 45, 45);

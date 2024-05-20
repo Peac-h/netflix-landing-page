@@ -1,5 +1,24 @@
 import { ReactNode } from "react";
-import "./Feature.scss";
+import "./Features.scss";
+import { featuresInfo } from "../pageInfo";
+
+export function Features() {
+  return (
+    <div className="features">
+      {featuresInfo.map((feature, index) => (
+        <Feature
+          key={index}
+          header={feature.header}
+          paragraph={feature.paragraph}
+          imageSrc={feature.imageSrc}
+          videoSrc={feature.videoSrc}
+          isFirstVideo={index === 0}
+          reverse={index % 2 !== 0}
+        />
+      ))}
+    </div>
+  );
+}
 
 export function Feature({
   header,

@@ -104,10 +104,6 @@
 @mixin smallest-paragraph {
   font-size: 1.4rem;
   font-weight: 400;
-
-  @media screen and (max-width: 960px) {
-    font-size: 1.2rem;
-  }
 }
 
 // Elements
@@ -178,6 +174,10 @@ body {
     border: 0;
     color: inherit;
     cursor: pointer;
+  }
+
+  li {
+    list-style: none;
   }
 
   a:link,

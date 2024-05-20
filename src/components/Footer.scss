@@ -1,0 +1,54 @@
+@import "../styles.scss";
+
+.footer {
+  @include main-layout;
+  position: relative;
+  margin: auto;
+  padding: 7.2rem 3.2rem;
+
+  @include smallest-paragraph;
+  color: var(--col-white-light);
+
+  @media screen and (max-width: 960px) {
+    padding: 3.2rem;
+  }
+  @media screen and (max-width: 600px) {
+    padding: 3.2rem 2.4rem;
+  }
+
+  & a {
+    text-decoration: underline !important;
+  }
+
+  &-item {
+    &--contact {
+      font-size: 16px;
+      margin-bottom: 1.2rem;
+    }
+    &--language {
+      margin-bottom: 2.4rem;
+    }
+  }
+
+  &-link-container {
+    padding: 1.2rem 0;
+    margin-top: -1.6rem;
+    margin-left: -1.2rem;
+    margin-bottom: 1.4rem;
+
+    display: inline-flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: calc(100% + 1.2rem);
+  }
+
+  &-link {
+    margin-top: 1.6rem;
+    margin-left: 1.2rem;
+
+    flex: 0 0 calc(25% - 1.2rem);
+    @media screen and (max-width: 960px) {
+      flex: 0 0 calc(50% - 1.2rem);
+    }
+  }
+}
