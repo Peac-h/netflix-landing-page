@@ -1,8 +1,9 @@
-@import "../styles.scss";
+@import "../fonts.scss";
 
 .language-selector {
   &-container {
     @include smaller-paragraph;
+    line-height: 1.5;
     color: var(--col-white);
   }
 

@@ -1,3 +1,5 @@
+@import "./fonts.scss";
+
 :root {
   --col-white: #fff;
   --col-white-light: rgba(255, 255, 255, 0.7);
@@ -15,106 +17,6 @@
     rgba(0, 0, 0, 0) 60%,
     rgba(0, 0, 0, 0.8) 100%
   );
-}
-
-// Mixins
-// Layout
-@mixin main-layout {
-  @media screen and (min-width: 1280px) {
-    max-width: calc(83.33333333333334% - 3.2rem);
-  }
-  @media screen and (min-width: 1920px) {
-    max-width: calc(66.66666666666666% - 3.2rem);
-  }
-}
-@mixin header-height {
-  min-height: 70rem;
-
-  @media screen and (max-width: 960px) {
-    min-height: 51.2rem;
-  }
-  @media screen and (max-width: 600px) {
-    min-height: 48rem;
-  }
-}
-@mixin hero-position {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-  padding: 15.8rem 3.2rem 6.4rem;
-
-  @media screen and (max-width: 960px) {
-    padding: 13.6rem 3.2rem 4.8rem;
-  }
-  @media screen and (max-width: 600px) {
-    padding: 12rem 2.4rem 3.2rem;
-  }
-}
-
-// Fonts
-@mixin big-header--bold {
-  font-size: 4.8rem;
-  font-weight: 900;
-
-  @media screen and (max-width: 960px) {
-    font-size: 3.2rem;
-    font-weight: 700;
-  }
-}
-@mixin regular-paragraph {
-  font-size: 2.4rem;
-  font-weight: 400;
-
-  @media screen and (max-width: 960px) {
-    font-size: 1.8rem;
-  }
-}
-@mixin regular-paragraph--bold {
-  font-size: 2.4rem;
-  font-weight: 500;
-
-  @media screen and (max-width: 600px) {
-    font-size: 1.8rem;
-  }
-}
-@mixin small-paragraph {
-  font-size: 2rem;
-  font-weight: 400;
-  line-height: 1.5;
-
-  @media screen and (max-width: 960px) {
-    font-size: 1.8rem;
-  }
-}
-@mixin smaller-paragraph {
-  font-size: 1.6rem;
-  font-weight: 400;
-  line-height: 1.5;
-}
-@mixin smaller-paragraph--bold {
-  font-size: 1.6rem;
-  font-weight: 500;
-
-  @media screen and (max-width: 960px) {
-    font-size: 1.4rem;
-  }
-}
-@mixin smallest-paragraph {
-  font-size: 1.4rem;
-  font-weight: 400;
-}
-
-// Elements
-@mixin hr-rule {
-  width: 100%;
-  height: 0.8rem;
-  background: var(--col-gray-dark);
-
-  position: absolute;
-  left: 0;
-  bottom: -0.8rem;
 }
 
 // Fonts
@@ -188,6 +90,12 @@ body {
 
   // Reusables
   .divider {
-    @include hr-rule;
+    width: 100%;
+    height: 0.8rem;
+    background: var(--col-gray-dark);
+
+    position: absolute;
+    left: 0;
+    bottom: -0.8rem;
   }
 }

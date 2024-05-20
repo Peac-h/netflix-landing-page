@@ -1,4 +1,4 @@
-@import "../styles.scss";
+@import "../fonts.scss";
 
 .input-field {
   &-container {
@@ -11,6 +11,7 @@
 
   &-label {
     @include smaller-paragraph;
+    line-height: 1.5;
     position: absolute;
     top: 1.5rem;
     left: 1.5rem;
@@ -31,6 +32,7 @@
 
   &-elements {
     @include smaller-paragraph;
+    line-height: 1.5;
     color: var(--col-white);
     fill: currentcolor;
     min-width: 20rem;
@@ -39,6 +41,7 @@
 
   &-element {
     @include smaller-paragraph;
+    line-height: 1.5;
     width: 100%;
     color: inherit;
     padding: 2.4rem 1.6rem 0.8rem;

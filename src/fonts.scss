@@ -1,0 +1,56 @@
+@mixin big-header--bold {
+  font-size: 4.8rem;
+  font-weight: 900;
+
+  @media screen and (max-width: 960px) {
+    font-size: 3.2rem;
+    font-weight: 700;
+  }
+}
+
+@mixin regular-paragraph {
+  font-size: 2.4rem;
+  font-weight: 400;
+
+  @media screen and (max-width: 960px) {
+    font-size: 1.8rem;
+  }
+}
+
+@mixin regular-paragraph--bold {
+  font-size: 2.4rem;
+  font-weight: 500;
+
+  @media screen and (max-width: 600px) {
+    font-size: 1.8rem;
+  }
+}
+
+@mixin small-paragraph {
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.5;
+
+  @media screen and (max-width: 960px) {
+    font-size: 1.8rem;
+  }
+}
+
+@mixin smaller-paragraph {
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+
+@mixin smaller-paragraph--bold {
+  font-size: 1.6rem;
+  font-weight: 500;
+
+  @media screen and (max-width: 960px) {
+    font-size: 1.4rem;
+  }
+}
+
+@mixin smallest-paragraph {
+  font-size: 1.4rem;
+  font-weight: 400;
+}
