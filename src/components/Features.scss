@@ -1,4 +1,5 @@
 @import "../layouts.scss";
+@import "../fonts.scss";
 
 .feature {
   position: relative;
@@ -71,6 +72,76 @@
         max-width: 63%;
         max-height: 47%;
       }
+    }
+
+    &-box {
+      box-sizing: content-box;
+      width: 50%;
+      padding: 0.8rem 1.2rem;
+      overflow: hidden;
+      position: absolute;
+      left: 50%;
+      bottom: 8%;
+      transform: translateX(-50%);
+      margin: 0 auto;
+      background: var(--col-black);
+      display: flex;
+      align-items: center;
+      min-width: 15rem;
+      border: 2px solid var(--col-gray-light);
+      box-shadow: 0 0 2em 0 var(--col-black);
+      border-radius: 1.2rem;
+      z-index: 1;
+
+      @media screen and (max-width: 1280px) {
+        width: 60%;
+      }
+      @media screen and (max-width: 600px) {
+        padding: 0 1.05rem;
+      }
+    }
+
+    &-image-box {
+      margin: 0 1.6rem 0 0;
+      img {
+        height: 8rem;
+        width: auto;
+        @media screen and (max-width: 960px) {
+          height: 6.4rem;
+        }
+        @media screen and (max-width: 600px) {
+          height: 4.8rem;
+        }
+      }
+    }
+
+    &-text-box {
+      text-align: left;
+      flex-grow: 1;
+      flex-shrink: 1;
+      margin: 0.48rem 0;
+    }
+
+    &-text-title {
+      @include smaller-paragraph--bold;
+    }
+
+    &-text-status {
+      @include smallest-paragraph;
+      color: var(--col-blue);
+
+      @media screen and (max-width: 600px) {
+        font-size: 1.2rem;
+      }
+    }
+
+    &-animation-box {
+      height: 6rem;
+      width: 4.8rem;
+      outline: 2px solid rgb(0, 0, 0);
+      background: url(https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/download-icon.gif)
+        center center no-repeat;
+      background-size: 100%;
     }
   }
 }
