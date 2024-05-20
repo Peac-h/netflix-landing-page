@@ -1,5 +1,12 @@
 import { ReactNode } from "react";
 import "./Features.scss";
+import imgTv from "../assets/tv.png";
+import imgKids from "../assets/kids.png";
+import imgDevices from "../assets/devices.png";
+import imgStrTh from "../assets/strTh.jpg";
+import imgStrTh2 from "../assets/strTh2.png";
+import videoStrTh from "../assets/video-strTh.mp4";
+import videoHaunted from "../assets/video-haunted.mp4";
 
 export function Features() {
   return (
@@ -7,23 +14,20 @@ export function Features() {
       <Feature
         header={`Enjoy on your TV`}
         paragraph={`Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray players, and more.`}
-        imageSrc={`https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/tv.png`}
-        videoSrc={`https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-tv-0819.m4v`}
+        imageSrc={imgTv}
+        videoSrc={videoHaunted}
         isFirstVideo
       />
 
       <Feature
         header={`Download your shows to watch offline`}
         paragraph={`Save your favorites easily and always have something to watch.`}
-        imageSrc={`https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/mobile-0819.jpg`}
+        imageSrc={imgStrTh}
         reverse
       >
         <div className="feature-media-box">
           <div className="feature-media-image-box">
-            <img
-              alt=""
-              src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/boxshot.png"
-            />
+            <img alt="Poster" src={imgStrTh2} />
           </div>
           <div className="feature-media-text-box">
             <div className="feature-media-text-title">Stranger Things</div>
@@ -36,14 +40,14 @@ export function Features() {
       <Feature
         header={`Watch everywhere`}
         paragraph={`Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV.`}
-        imageSrc={`https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/device-pile.png`}
-        videoSrc={`https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-devices.m4v`}
+        imageSrc={imgDevices}
+        videoSrc={videoStrTh}
       />
 
       <Feature
         header={`Create profiles for kids`}
         paragraph={`Send kids on adventures with their favorite characters in a space made just for them—free with your membership.`}
-        imageSrc={`https://occ-0-7681-3467.1.nflxso.net/dnm/api/v6/19OhWN2dO19C9txTON9tvTFtefw/AAAABejKYujIIDQciqmGJJ8BtXkYKKTi5jiqexltvN1YmvXYIfX8B9CYwooUSIzOKneblRFthZAFsYLMgKMyNfeHwk16DmEkpIIcb6A3.png?r=f55`}
+        imageSrc={imgKids}
         reverse
       />
     </div>
