@@ -1,5 +1,11 @@
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { SVGs } from "./SVGs";
 import "./InputField.scss";
+
+const validateEmail = (email: string): boolean => {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+};
 
 export function InputField({
   name,
@@ -10,7 +16,11 @@ export function InputField({
   autoComplete,
   className = "",
   error,
+  setError,
+  value,
   onChange,
+  required,
+  inputRef,
 }: {
   name: string;
   label: string;
@@ -19,28 +29,43 @@ export function InputField({
   maxLength?: number;
   autoComplete?: string;
   className?: string;
-  error?: string;
-  onChange?: (value: string) => void;
+  error: string;
+  setError: React.Dispatch<React.SetStateAction<string>>;
+  value: string;
+  onChange: (value: string) => void;
+  required: boolean;
+  inputRef: React.RefObject<HTMLInputElement>;
 }) {
-  const [inputValue, setInputValue] = useState("");
   const [isFocused, setIsFocused] = useState(false);
+  const [isValid, setIsValid] = useState(false);
+
+  useEffect(() => {
+    if (!isFocused && value !== "" && !validateEmail(value)) {
+      setError("Invalid email address");
+    }
+    if (validateEmail(value) && error) {
+      setIsValid(true);
+      setError("");
+    }
+    if (!isFocused && value !== "" && validateEmail(value)) {
+      setIsValid(true);
+    }
+  }, [isFocused, value, error, setError]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
-    setInputValue(value);
-    if (onChange) {
-      onChange(value);
-    }
+    onChange(e.target.value);
   };
 
   return (
-    <div className={`input-field-container ${className}`}>
+    <div
+      className={`input-field-container ${className} ${
+        error ? "input-field-error" : ""
+      } ${isValid ? "input-field-valid" : ""}`}
+    >
       <label
         htmlFor={`${name}Input`}
         className="input-field-label"
-        style={
-          isFocused || inputValue ? { top: ".8rem", fontSize: "1.2rem" } : {}
-        }
+        style={isFocused || value ? { top: ".8rem", fontSize: "1.2rem" } : {}}
       >
         {label}
       </label>
@@ -52,17 +77,17 @@ export function InputField({
           type={type}
           name={name}
           id={`${name}Input`}
-          value={inputValue}
+          value={value}
           onChange={handleInputChange}
           onFocus={() => setIsFocused(true)}
           onBlur={() => setIsFocused(false)}
-          className={`input-field-element ${error ? "input-field-error" : ""}`}
-          aria-invalid={!!error}
-          aria-describedby={error ? `${name}Error` : undefined}
+          className="input-field-element"
+          required={required}
+          ref={inputRef}
         />
         {error && (
           <span id={`${name}Error`} className="input-field-error-text">
-            {error}
+            <SVGs name="reject" /> {error}
           </span>
         )}
       </div>

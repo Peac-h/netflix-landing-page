@@ -61,4 +61,23 @@
       max-height: 4.6rem;
     }
   }
+
+  &-error {
+    border-color: var(--col-main-light-red);
+
+    &-text {
+      position: absolute;
+      top: 6rem;
+      left: 0;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: var(--col-main-light-red);
+      font-size: 13px;
+    }
+  }
+
+  &-valid {
+    border-color: var(--col-green);
+  }
 }

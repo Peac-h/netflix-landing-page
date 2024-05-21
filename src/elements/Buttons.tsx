@@ -8,6 +8,7 @@ export function Button({
   href,
   className = "",
   icon,
+  type = "button",
 }: {
   variant: "getStarted" | "signIn";
   children: React.ReactNode;
@@ -15,12 +16,14 @@ export function Button({
   href?: string;
   className?: string;
   icon?: IconName;
+  type?: "button" | "submit" | "reset";
 }) {
   if (href) {
     return (
       <button
         className={`button button--${variant} ${className}`}
         onClick={onClick}
+        type={type}
       >
         <a href={href}>
           {children}
@@ -34,6 +37,7 @@ export function Button({
     <button
       className={`button button--${variant} ${className}`}
       onClick={onClick}
+      type={type}
     >
       {children}
       {icon && <SVGs name={icon} viewbox="0 0 24 24" />}
