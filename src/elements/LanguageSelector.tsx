@@ -1,18 +1,17 @@
 import { SVGs } from "./SVGs";
+import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import "./LanguageSelector.scss";
 
-const LANGUAGES = [
-  {
-    language: "English",
-    code: "en",
-  },
-  {
-    language: "Русский",
-    code: "ru",
-  },
-];
-
 export function LanguageSelector() {
+  const { i18n } = useTranslation();
+  const navigate = useNavigate();
+
+  const changeLanguage = (lng: string) => {
+    i18n.changeLanguage(lng);
+    navigate(`/${i18n.language}`);
+  };
+
   return (
     <div className="language-selector-container">
       <div className="language-selector-button">
@@ -23,8 +22,19 @@ export function LanguageSelector() {
         <select
           className="language-selector-elements"
           aria-label="Select Language"
+          onChange={(e) => changeLanguage(e.target.value)}
+          value={i18n.language}
         >
-          {LANGUAGES.map((language) => (
+          {[
+            {
+              language: "English",
+              code: "en",
+            },
+            {
+              language: "Русский",
+              code: "ru",
+            },
+          ].map((language) => (
             <option
               key={language.code}
               lang={language.code}

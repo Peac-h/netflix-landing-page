@@ -1,4 +1,4 @@
-@import "../fonts.scss";
+@import "../styles/fonts.scss";
 
 .button {
   display: flex;
@@ -9,6 +9,7 @@
   font-weight: 500;
   line-height: 1;
   cursor: pointer;
+  white-space: nowrap;
 
   transition-duration: 250ms;
   transition-property: background-color, border-color;

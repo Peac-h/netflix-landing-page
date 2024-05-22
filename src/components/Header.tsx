@@ -2,8 +2,10 @@ import { Button } from "../elements/Buttons";
 import { GetStartedForm } from "../elements/GetStartedForm";
 import { LanguageSelector } from "../elements/LanguageSelector";
 import { SVGs } from "../elements/SVGs";
-import "./Header.scss";
 import mainBg from "../assets/main-bg.jpeg";
+import mainBgRu from "../assets/main-bg-ru.jpeg";
+import { useTranslation } from "react-i18next";
+import "./Header.scss";
 
 function HeaderLogo() {
   return (
@@ -14,11 +16,13 @@ function HeaderLogo() {
 }
 
 function HeaderButtons() {
+  const { t } = useTranslation();
+
   return (
     <div className="header-bar-buttons-container">
       <LanguageSelector />
       <Button variant="signIn" href="#">
-        <span>Sign In</span>
+        <span>{t("buttons.signInBtn")}</span>
       </Button>
     </div>
   );
@@ -34,13 +38,13 @@ function HeaderBar() {
 }
 
 function Hero() {
+  const { t } = useTranslation();
+
   return (
     <div className="header-hero-container">
       <div className="header-hero-content">
-        <h1 className="header-hero-heading">
-          Unlimited movies, TV shows, and more
-        </h1>
-        <p className="header-hero-paragraph">Watch anywhere. Cancel anytime.</p>
+        <h1>{t("hero.welcome")}</h1>
+        <p>{t("hero.description")}</p>
       </div>
       <GetStartedForm />
     </div>
@@ -48,11 +52,13 @@ function Hero() {
 }
 
 function HeaderOverlay() {
+  const { i18n } = useTranslation();
+
   return (
     <div className="header-overlay-container">
       <img
         alt="Image of movies collection"
-        src={mainBg}
+        src={i18n.language === "ru" ? mainBgRu : mainBg}
         className="header-overlay-image"
       />
       <div className="header-overlay-bg"></div>
@@ -61,8 +67,12 @@ function HeaderOverlay() {
 }
 
 export function Header() {
+  const { i18n } = useTranslation();
+
   return (
-    <header className="header">
+    <header
+      className={`header ${i18n.language === "ru" ? "header-hight--ru" : ""}`}
+    >
       <div className="header-content">
         <HeaderBar />
         <Hero />

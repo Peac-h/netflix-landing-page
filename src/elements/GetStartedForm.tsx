@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import { Button } from "./Buttons";
 import { InputField } from "./InputField";
+import { useTranslation } from "react-i18next";
 import "./GetStartedForm.scss";
 
 const validateEmail = (email: string): boolean => {
@@ -13,6 +14,8 @@ export function GetStartedForm() {
   const [error, setError] = useState("");
   const formRef = useRef<HTMLFormElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+
+  const { t } = useTranslation();
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -32,7 +35,7 @@ export function GetStartedForm() {
       }
       inputRef.current?.focus();
     } else if (!validateEmail(email)) {
-      setError("Invalid email address");
+      setError(t("form.emailError"));
     } else {
       setError("");
     }
@@ -46,14 +49,12 @@ export function GetStartedForm() {
         onSubmit={handleSubmit}
         noValidate
       >
-        <h3 className="get-started-form-header">
-          Ready to watch? Enter your email to create or restart your membership.
-        </h3>
+        <h3 className="get-started-form-header">{t("form.header")}</h3>
         <div className="get-started-form-content">
           <div className="get-started-form-input">
             <InputField
               name="email"
-              label="Email address"
+              label={t("form.emailLabel")}
               type="email"
               value={email}
               onChange={setEmail}
@@ -70,7 +71,7 @@ export function GetStartedForm() {
               type="submit"
               onClick={handleClick}
             >
-              <span>Get Started</span>
+              <span>{t("buttons.getStartedBtn")}</span>
             </Button>
           </div>
         </div>

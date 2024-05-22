@@ -1,4 +1,4 @@
-@import "../layouts.scss";
+@import "../styles/layouts.scss";
 
 .header {
   @include header-height;
@@ -6,6 +6,12 @@
   position: relative;
   display: flex;
   flex-direction: column;
+
+  &-hight--ru {
+    @media screen and (max-width: 600px) {
+      min-height: 52.9rem !important;
+    }
+  }
 
   &-bar {
     &-container {
@@ -70,6 +76,7 @@
       flex-direction: column;
       gap: 1.6rem;
       align-items: center;
+      @include main-layout;
     }
   }
 

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { SVGs } from "./SVGs";
+import { useTranslation } from "react-i18next";
 import "./InputField.scss";
 
 const validateEmail = (email: string): boolean => {
@@ -39,9 +40,11 @@ export function InputField({
   const [isFocused, setIsFocused] = useState(false);
   const [isValid, setIsValid] = useState(false);
 
+  const { t } = useTranslation();
+
   useEffect(() => {
     if (!isFocused && value !== "" && !validateEmail(value)) {
-      setError("Invalid email address");
+      setError(t("form.emailError"));
     }
     if (validateEmail(value) && error) {
       setIsValid(true);
@@ -50,7 +53,7 @@ export function InputField({
     if (!isFocused && value !== "" && validateEmail(value)) {
       setIsValid(true);
     }
-  }, [isFocused, value, error, setError]);
+  }, [isFocused, value, error, setError, t]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     onChange(e.target.value);

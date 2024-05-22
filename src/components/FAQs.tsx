@@ -1,20 +1,24 @@
 import { useState } from "react";
 import { GetStartedForm } from "../elements/GetStartedForm";
 import { SVGs } from "../elements/SVGs";
+import { useTranslation } from "react-i18next";
+import { useFAQsInfo } from "../data/pageInfo";
 import "./FAQs.scss";
-import { FAQsInfo } from "../pageInfo";
 
 export function FAQs() {
   const [showAnswer, setShowAnswer] = useState<number | null>(null);
+
+  const { t } = useTranslation();
+  const faqsInfo = useFAQsInfo();
 
   return (
     <div className="faqs">
       <section className="faq">
         <div className="faq-content">
-          <h2 className="faq-header">Frequently Asked Questions</h2>
+          <h2 className="faq-header">{t("faqs.header")}</h2>
           <div className="faq-list-container">
             <ul className="faq-list">
-              {FAQsInfo.map((faq, index) => (
+              {faqsInfo.map((faq, index) => (
                 <li key={index} className="faq-list-item">
                   <h3
                     className="faq-list-item-header"
@@ -24,6 +28,7 @@ export function FAQs() {
                   >
                     <button className="faq-button">
                       <span>{faq.question}</span>
+
                       <SVGs
                         name="plusBig"
                         viewbox="0 0 36 36"
@@ -59,7 +64,12 @@ export function FAQs() {
                       showAnswer === index ? "show" : ""
                     }`}
                   >
-                    <p className="faq-list-item-paragraph">{faq.answer}</p>
+                    <p
+                      className="faq-list-item-paragraph"
+                      dangerouslySetInnerHTML={{
+                        __html: faq.answer,
+                      }}
+                    />
                   </div>
                 </li>
               ))}

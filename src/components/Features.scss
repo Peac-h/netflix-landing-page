@@ -1,5 +1,5 @@
-@import "../layouts.scss";
-@import "../fonts.scss";
+@import "../styles/layouts.scss";
+@import "../styles/fonts.scss";
 
 .feature {
   position: relative;
@@ -140,7 +140,8 @@
       height: 6rem;
       width: 4.8rem;
       outline: 2px solid rgb(0, 0, 0);
-      background: url(../assets/download-icon.gif) center center no-repeat;
+      background: url(https://raw.githubusercontent.com/Peac-h/netflix-landing-page/main/src/assets/download-icon.gif)
+        center center no-repeat;
       background-size: 100%;
     }
   }

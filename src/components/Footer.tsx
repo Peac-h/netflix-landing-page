@@ -1,14 +1,18 @@
 import { LanguageSelector } from "../elements/LanguageSelector";
+import { useFooterInfo } from "../data/pageInfo";
+import { useTranslation } from "react-i18next";
 import "./Footer.scss";
-import { footerInfo } from "../pageInfo";
 
 export function Footer() {
+  const { t } = useTranslation();
+  const footerInfo = useFooterInfo();
+
   return (
     <footer className="footer">
       <div className="footer-content">
         <div className="footer-item-container">
           <div className="footer-item footer-item--contact">
-            <a href="#">Questions? Contact us.</a>
+            <a href="#">{t("footer.header")}</a>
           </div>
         </div>
         <div className="footer-item-container">
@@ -26,7 +30,7 @@ export function Footer() {
           </div>
         </div>
         <div className="footer-item-container">
-          <div className="footer-item">Netflix Georgia</div>
+          <div className="footer-item">Netflix {t("externals.georgia")}</div>
         </div>
       </div>
     </footer>

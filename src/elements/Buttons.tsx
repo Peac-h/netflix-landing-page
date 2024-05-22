@@ -1,5 +1,5 @@
-import "./Buttons.scss";
 import { SVGs, IconName } from "./SVGs";
+import "./Buttons.scss";
 
 export function Button({
   variant,
