@@ -6,9 +6,11 @@ The page is responsive, just like the original.
 
 ## Checkout The Live Demo
 
-[Link to Page]()
+[Link to Page](https://netflix-clone-by-peach.netlify.app/)
 
-![Netflix Landing Page - Desktop]()
+![Netflix Landing Page English - Desktop](https://raw.githubusercontent.com/Peac-h/netflix-landing-page/main/DesktopEn.png)
+
+![Netflix Landing Page Russian - Desktop](https://raw.githubusercontent.com/Peac-h/netflix-landing-page/main/DesktopRu.png)
 
 ## Technologies Used
 
