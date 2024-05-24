@@ -1,8 +1,15 @@
-# Spotify Landing Page Clone
+# Netflix Landing Page Clone
 
-This project is a clone of Netflix's landing page. It has been developed using SCSS for styling, TypeScript for scripting, and React for the front-end framework. The project uses Vite as the build tool.
+This project is a clone of [Netflix's](https://www.netflix.com/) landing page, developed with modern web technologies to ensure high performance and maintainability. The key technologies used in this project are:
 
-The page is responsive, just like the original.
+- **SCSS** for styling, enabling modular and reusable styles.
+- **TypeScript** for scripting, providing type safety and enhancing code quality.
+- **React** for the front-end framework, ensuring a dynamic and interactive user interface.
+- **Vite** as the build tool, offering fast and efficient development and build processes.
+
+The page is fully responsive, mirroring the adaptability of the original Netflix landing page across various devices and screen sizes.
+
+Additionally, the page supports two languages, English and Russian, utilizing `react-i18next` for internationalization and localization.
 
 ## Checkout The Live Demo
 
@@ -10,14 +17,11 @@ The page is responsive, just like the original.
 
 ![Netflix Landing Page English - Desktop](https://raw.githubusercontent.com/Peac-h/netflix-landing-page/main/DesktopEn.png)
 
+![Netflix Landing Page Big Screens English - Desktop](https://raw.githubusercontent.com/Peac-h/netflix-landing-page/main/BigScreensEn.png)
+
 ![Netflix Landing Page Russian - Desktop](https://raw.githubusercontent.com/Peac-h/netflix-landing-page/main/DesktopRu.png)
 
-## Technologies Used
-
-- SCSS: A styling language used for more maintainable and structured stylesheets.
-- TypeScript: A programming language for adding static typing to JavaScript.
-- React: A JavaScript library for building user interfaces.
-- Vite: A fast build tool that leverages ESBuild.
+![Netflix Landing Page Big Screens Russian - Desktop](https://raw.githubusercontent.com/Peac-h/netflix-landing-page/main/BigScreensRu.png)
 
 ## Author
 
