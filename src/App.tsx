@@ -33,8 +33,9 @@ const App = () => {
   useEffect(() => {
     i18n.language === "en"
       ? (document.title =
-          "Netflix - Watch TV Shows Online, Watch Movies Online")
-      : (document.title = "Netflix Грузия — Смотрите сериалы и фильмы онлайн");
+          "[Clone] Netflix - Watch TV Shows Online, Watch Movies Online")
+      : (document.title =
+          "[Clone] Netflix Грузия — Смотрите сериалы и фильмы онлайн");
   }, [i18n.language]);
 
   useEffect(() => {
