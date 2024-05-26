@@ -67,12 +67,8 @@ function HeaderOverlay() {
 }
 
 export function Header() {
-  const { i18n } = useTranslation();
-
   return (
-    <header
-      className={`header ${i18n.language === "ru" ? "header-hight--ru" : ""}`}
-    >
+    <header className="header">
       <div className="header-content">
         <HeaderBar />
         <Hero />
