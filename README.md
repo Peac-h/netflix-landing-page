@@ -13,7 +13,7 @@ Additionally, the page supports two languages, English and Russian, utilizing `r
 
 ## Checkout The Live Demo
 
-[Link to Page](https://netflix-clone-by-peach.netlify.app/)
+[Link to Page](https://nf-by-peach.netlify.app/)
 
 ![Netflix Landing Page English - Desktop](https://raw.githubusercontent.com/Peac-h/netflix-landing-page/main/DesktopEn.png)
 
