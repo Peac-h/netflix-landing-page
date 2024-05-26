@@ -21,6 +21,7 @@ export function GetStartedForm() {
     event.preventDefault();
     if (!email || !validateEmail(email)) return;
     console.log("Submitted email: ", email);
+    return;
   };
 
   const handleClick = () => {
