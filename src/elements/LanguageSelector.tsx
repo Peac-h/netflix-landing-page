@@ -1,15 +1,18 @@
 import { SVGs } from "./SVGs";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import "./LanguageSelector.scss";
 
 export function LanguageSelector() {
   const { i18n } = useTranslation();
   const navigate = useNavigate();
+  const location = useLocation();
 
   const changeLanguage = (lng: string) => {
+    const newPath = location.pathname.replace(/^\/(en|ru)/, `/${lng}`);
+
     i18n.changeLanguage(lng);
-    navigate(`/${i18n.language}`);
+    navigate(newPath);
   };
 
   return (

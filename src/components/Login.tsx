@@ -6,17 +6,21 @@ import { FooterSignIn } from "./Footer";
 import Checkbox from "../elements/Checkbox";
 import "./Login.scss";
 import { useTranslation } from "react-i18next";
+import { Link, useParams } from "react-router-dom";
 
-// routes
 // inputs
 // double check
 // bg sources
 
 function LoginHeader() {
+  const { lang } = useParams();
+
   return (
     <header className="login-header">
       <HeaderBar>
-        <HeaderLogo />
+        <Link to={`/${lang}`}>
+          <HeaderLogo />
+        </Link>
       </HeaderBar>
     </header>
   );
@@ -123,9 +127,9 @@ function LoginFooter(props: {
 
       <div className="signup">
         {t("signInPage.form.newToNetflix")}{" "}
-        <a href="/" className="signup-link">
+        <Link to="/" className="signup-link">
           {t("signInPage.form.buttons.signUpNow")}
-        </a>
+        </Link>
         .
       </div>
 

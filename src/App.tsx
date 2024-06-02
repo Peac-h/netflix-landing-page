@@ -1,18 +1,18 @@
-import { useEffect } from "react";
-import { useTranslation } from "react-i18next";
+import { ReactNode, useEffect } from "react";
 import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  Navigate,
-  useLocation,
+  RouterProvider,
+  createBrowserRouter,
+  useParams,
   useNavigate,
+  Navigate,
+  Outlet,
 } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { Header } from "./components/Header";
+import { Main } from "./components/Main";
 import { FAQs } from "./components/FAQs";
 import { Features } from "./components/Features";
 import { Footer } from "./components/Footer";
-import { Header } from "./components/Header";
-import { Main } from "./components/Main";
 import { Login } from "./components/Login";
 
 const Layout = () => (
@@ -26,10 +26,18 @@ const Layout = () => (
   </>
 );
 
-const App = () => {
+const LanguageWrapper = (props: { children: ReactNode }) => {
   const { i18n } = useTranslation();
-  const location = useLocation();
+  const { lang } = useParams();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (lang && (lang === "en" || lang === "ru")) {
+      i18n.changeLanguage(lang);
+    } else {
+      navigate("/en", { replace: true });
+    }
+  }, [lang, i18n, navigate]);
 
   useEffect(() => {
     i18n.language === "en"
@@ -39,33 +47,40 @@ const App = () => {
           "[Clone] Netflix Грузия — Смотрите сериалы и фильмы онлайн");
   }, [i18n.language]);
 
-  useEffect(() => {
-    const currentLang = location.pathname.split("/")[1];
+  return props.children;
+};
 
-    if (currentLang && currentLang !== i18n.language) {
-      i18n.changeLanguage(currentLang);
-      navigate(`/${i18n.language}`);
-    }
-  }, [navigate, location, i18n]);
+const App = () => {
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Navigate to="/en" replace />,
+    },
+    {
+      path: "/:lang",
+      element: (
+        <LanguageWrapper>
+          <Outlet />
+        </LanguageWrapper>
+      ),
+      children: [
+        {
+          path: "",
+          element: <Layout />,
+        },
+        {
+          path: "login",
+          element: <Login />,
+        },
+      ],
+    },
+  ]);
 
   return (
     <div className="App">
-      <Routes>
-        <Route path="/" element={<Navigate to={`/${i18n.language}`} />} />
-        <Route path="/en/*" element={<Layout />} />
-        <Route path="/ru/*" element={<Layout />} />
-        <Route path="login/en" element={<Login />} />
-        <Route path="login/ru" element={<Login />} />
-        <Route path="*" element={<Navigate to={`/${i18n.language}`} />} />
-      </Routes>
+      <RouterProvider router={router} />
     </div>
   );
 };
 
-const AppWrapper = () => (
-  <Router>
-    <App />
-  </Router>
-);
-
-export default AppWrapper;
+export default App;

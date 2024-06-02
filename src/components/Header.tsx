@@ -6,6 +6,7 @@ import mainBg from "../assets/main-bg.jpeg";
 import mainBgRu from "../assets/main-bg-ru.jpeg";
 import { useTranslation } from "react-i18next";
 import "./Header.scss";
+import { Link, useParams } from "react-router-dom";
 
 export function HeaderLogo() {
   return (
@@ -17,17 +18,15 @@ export function HeaderLogo() {
 
 function HeaderButtons() {
   const { t } = useTranslation();
-  const { i18n } = useTranslation();
+  const { lang } = useParams();
 
   return (
     <div className="header-bar-buttons-container">
       <LanguageSelector />
-      <Button
-        variant="signIn"
-        href={`/login/${i18n.language}`}
-        className="is-small"
-      >
-        <span>{t("buttons.signInBtn")}</span>
+      <Button variant="signIn" className="is-small">
+        <span>
+          <Link to={`/${lang}/login`}>{t("buttons.signInBtn")}</Link>
+        </span>
       </Button>
     </div>
   );
