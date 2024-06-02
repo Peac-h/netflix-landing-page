@@ -1,0 +1,155 @@
+@import "../styles/fonts.scss";
+
+.login {
+  font-family: "helvetica neue";
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+
+  &-content {
+    height: max-content;
+    min-height: 70.7rem;
+    max-width: 45rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2.2rem;
+    flex-grow: 1;
+    margin: 0.4rem auto 4.96rem;
+    padding: 4.8rem 6.8rem;
+    background-color: var(--col-black-lighter);
+    border-radius: 0.4rem;
+
+    @media screen and (max-width: 600px) {
+      min-height: 0;
+      width: 100%;
+      max-width: 100%;
+      margin-bottom: 30px;
+      padding: 0 5%;
+    }
+
+    &-heading {
+      color: var(--col-white);
+      margin-bottom: 0.6rem;
+      @include regular-header;
+    }
+
+    .login-form {
+      width: 100%;
+      min-width: 31.4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.6rem;
+
+      @media screen and (max-width: 600px) {
+        min-width: 0;
+      }
+
+      &-message {
+        font-size: 13px;
+        color: var(--col-white-light);
+        text-align: center;
+      }
+
+      &-separator {
+        @include smaller-paragraph;
+        text-align: center;
+        text-transform: uppercase;
+        color: var(--col-white-light);
+      }
+
+      &-forgot-password {
+        @include smaller-paragraph;
+        text-align: center;
+
+        &:hover {
+          color: var(--col-white-light);
+          text-decoration: underline;
+        }
+      }
+
+      &-forgot-email {
+        margin-bottom: 2.95rem;
+
+        &--ru {
+          text-align: left;
+          @media screen and (max-width: 600px) {
+            text-align: center;
+          }
+        }
+      }
+    }
+
+    &-footer {
+      @include smaller-paragraph;
+      display: flex;
+      flex-direction: column;
+      gap: 1.6rem;
+
+      .signup {
+        color: var(--col-white-light);
+
+        &-link {
+          color: var(--col-white) !important;
+          font-weight: 500;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+
+      .recaptcha {
+        color: var(--col-gray);
+        font-size: 13px;
+        padding: 8px 0 0;
+        display: flex;
+        flex-direction: column;
+        gap: 1.3rem;
+
+        &-details {
+          opacity: 0;
+          transition: height 0.5s ease, opacity 0.5s ease;
+          visibility: hidden;
+
+          &.visible {
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+
+        &-link {
+          color: var(--col-blue-secondary) !important;
+
+          &:hover {
+            background: none;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+
+  &-overlay {
+    height: 100vh;
+    min-height: 100vh;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.5;
+    pointer-events: none;
+
+    @media screen and (max-width: 600px) {
+      display: none;
+    }
+
+    &-image {
+      min-height: 100%;
+      min-width: 100%;
+    }
+  }
+}

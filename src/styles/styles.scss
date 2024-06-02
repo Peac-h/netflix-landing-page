@@ -5,15 +5,20 @@
   --col-white-light: rgba(255, 255, 255, 0.7);
   --col-black: #000;
   --col-black-light: rgba(22, 22, 22, 0.7);
-  --col-black-lighter: rgb(0 0 0 / 40%);
+  --col-black-lighter: rgba(0, 0, 0, 0.7);
+  --col-black-lightest: rgba(0, 0, 0, 0.4);
   --col-main-red: #e50914;
   --col-main-light-red: #eb3942;
   --col-main-dark-red: #c11119;
   --col-main-darkest-red: #99161d;
   --col-blue: #0071eb;
+  --col-blue-secondary: #0080ff;
   --col-green: #2bb871;
+  --col-gray: #8c8c8c;
   --col-gray-dark: #232323;
   --col-gray-light: rgba(128, 128, 128, 0.7);
+  --col-gray-lighter: rgba(128, 128, 128, 0.4);
+  --col-gray-lightest: rgba(128, 128, 128, 0.3);
   --overlay-gradient: linear-gradient(
     to top,
     rgba(0, 0, 0, 0.8) 0,
@@ -27,6 +32,12 @@
   font-family: "sans";
   src: url(../../src/font/NetflixSans_W_Blk.woff2);
   font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: "helvetica neue";
+  src: url(../../src/font/Helvetica-Neue-Font/Helvetica_Neue_Medium_Extended);
+  font-weight: 400;
   font-style: normal;
 }
 @font-face {

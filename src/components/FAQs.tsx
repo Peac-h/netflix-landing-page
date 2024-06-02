@@ -31,7 +31,7 @@ export function FAQs() {
 
                       <SVGs
                         name="plusBig"
-                        viewbox="0 0 36 36"
+                        viewBox="0 0 36 36"
                         height={36}
                         width={36}
                         styles={
@@ -45,7 +45,7 @@ export function FAQs() {
                       />
                       <SVGs
                         name="plusSmall"
-                        viewbox="0 0 24 24"
+                        viewBox="0 0 24 24"
                         height={24}
                         width={24}
                         styles={

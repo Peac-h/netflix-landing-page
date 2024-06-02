@@ -16,6 +16,14 @@ export const useFooterInfo = () => {
   }[];
 };
 
+export const useFooterSignInInfo = () => {
+  const { t } = useTranslation();
+  return t("signInPage.footerSignIn.links", { returnObjects: true }) as {
+    name: string;
+    link: string;
+  }[];
+};
+
 export const useFeatureInfo = () => {
   const { t } = useTranslation();
   return t("features", { returnObjects: true }) as {

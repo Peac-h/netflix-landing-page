@@ -23,7 +23,7 @@ export function Features() {
             <div className="feature-media-box">
               <div className="feature-media-image-box">
                 <img
-                  alt="Poster"
+                  alt=""
                   src="https://raw.githubusercontent.com/Peac-h/netflix-landing-page/main/src/assets/strTh2.png"
                 />
               </div>
@@ -44,15 +44,7 @@ export function Features() {
   );
 }
 
-export function Feature({
-  header,
-  paragraph,
-  imageSrc,
-  videoSrc,
-  children,
-  reverse,
-  isFirstVideo,
-}: {
+export function Feature(props: {
   header: string;
   paragraph: string;
   imageSrc?: string;
@@ -63,40 +55,40 @@ export function Feature({
 }) {
   return (
     <section className="feature">
-      <div className={`feature-content ${reverse ? "reverse" : ""}`}>
+      <div className={`feature-content ${props.reverse ? "reverse" : ""}`}>
         <div className="feature-text-container">
-          <h2 className="feature-text-header">{header}</h2>
+          <h2 className="feature-text-header">{props.header}</h2>
           <p
             className="feature-text-paragraph"
-            dangerouslySetInnerHTML={{ __html: paragraph }}
+            dangerouslySetInnerHTML={{ __html: props.paragraph }}
           ></p>
         </div>
 
         <div className="feature-media-container">
-          {imageSrc && (
+          {props.imageSrc && (
             <img
-              alt="Frame image for video"
+              alt=""
               aria-hidden="true"
-              src={imageSrc}
+              src={props.imageSrc}
               className="feature-media-image"
             />
           )}
-          {videoSrc && (
+          {props.videoSrc && (
             <video
               autoPlay
               playsInline
               muted
               loop
               className={`feature-media-video ${
-                isFirstVideo
+                props.isFirstVideo
                   ? "feature-media-video--first"
                   : "feature-media-video--second"
               }`}
             >
-              <source src={videoSrc} type="video/mp4" />
+              <source src={props.videoSrc} type="video/mp4" />
             </video>
           )}
-          {children}
+          {props.children}
         </div>
       </div>
       <div className="divider"></div>

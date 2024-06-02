@@ -7,34 +7,34 @@ import mainBgRu from "../assets/main-bg-ru.jpeg";
 import { useTranslation } from "react-i18next";
 import "./Header.scss";
 
-function HeaderLogo() {
+export function HeaderLogo() {
   return (
     <div className="header-bar-logo-container">
-      <SVGs name="logo" viewbox="0 0 111 30" className="header-bar-logo" />
+      <SVGs name="logo" viewBox="0 0 111 30" className="header-bar-logo" />
     </div>
   );
 }
 
 function HeaderButtons() {
   const { t } = useTranslation();
+  const { i18n } = useTranslation();
 
   return (
     <div className="header-bar-buttons-container">
       <LanguageSelector />
-      <Button variant="signIn" href="#">
+      <Button
+        variant="signIn"
+        href={`/login/${i18n.language}`}
+        className="is-small"
+      >
         <span>{t("buttons.signInBtn")}</span>
       </Button>
     </div>
   );
 }
 
-function HeaderBar() {
-  return (
-    <div className="header-bar-container">
-      <HeaderLogo />
-      <HeaderButtons />
-    </div>
-  );
+export function HeaderBar(props: { children: React.ReactNode }) {
+  return <div className="header-bar-container">{props.children}</div>;
 }
 
 function Hero() {
@@ -51,13 +51,13 @@ function Hero() {
   );
 }
 
-function HeaderOverlay() {
+export function HeaderOverlay() {
   const { i18n } = useTranslation();
 
   return (
     <div className="header-overlay-container">
       <img
-        alt="Image of movies collection"
+        alt=""
         src={i18n.language === "ru" ? mainBgRu : mainBg}
         className="header-overlay-image"
       />
@@ -70,7 +70,10 @@ export function Header() {
   return (
     <header className="header">
       <div className="header-content">
-        <HeaderBar />
+        <HeaderBar>
+          <HeaderLogo />
+          <HeaderButtons />
+        </HeaderBar>
         <Hero />
         <HeaderOverlay />
       </div>

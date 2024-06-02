@@ -13,6 +13,7 @@ import { Features } from "./components/Features";
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
 import { Main } from "./components/Main";
+import { Login } from "./components/Login";
 
 const Layout = () => (
   <>
@@ -40,6 +41,7 @@ const App = () => {
 
   useEffect(() => {
     const currentLang = location.pathname.split("/")[1];
+
     if (currentLang && currentLang !== i18n.language) {
       i18n.changeLanguage(currentLang);
       navigate(`/${i18n.language}`);
@@ -52,6 +54,8 @@ const App = () => {
         <Route path="/" element={<Navigate to={`/${i18n.language}`} />} />
         <Route path="/en/*" element={<Layout />} />
         <Route path="/ru/*" element={<Layout />} />
+        <Route path="login/en" element={<Login />} />
+        <Route path="login/ru" element={<Login />} />
         <Route path="*" element={<Navigate to={`/${i18n.language}`} />} />
       </Routes>
     </div>

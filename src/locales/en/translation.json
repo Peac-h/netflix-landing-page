@@ -140,5 +140,61 @@
     "strangerThings": "Stranger Things",
     "downloading": "Downloading",
     "georgia": "Georgia"
+  },
+  "signInPage": {
+    "form": {
+      "header": "Sign In",
+      "emailOrMobileLabel": "Email or mobile number",
+      "passwordLabel": "Password",
+      "buttons": {
+        "signIn": "Sign In",
+        "singleSignIn": "Use a Sign-In Code",
+        "sendSignIn": "Send Sign-In Code",
+        "usePassword": "Use Password",
+        "forgotPassword": "Forgot password?",
+        "forgotEmailOrPhone": "Forgot Email or Phone Number?",
+        "rememberMe": "Remember me",
+        "signUpNow": "Sign up now",
+        "learnMore": "Learn more.",
+        "privacyPolicy": "Privacy Policy",
+        "termsOfUse": "Terms of Service"
+      },
+      "message": "Message and data rates may apply",
+      "separator": "OR",
+      "and": "and",
+      "newToNetflix": "New to Netflix?",
+      "recaptchaInfo": "This page is protected by Google reCAPTCHA to ensure you're not a bot.",
+      "recaptchaDetailsPartOne": "The information collected by Google reCAPTCHA is subject to the Google",
+      "recaptchaDetailsPartTwo": "and is used for providing, maintaining, and improving the reCAPTCHA service and for general security purposes (it is not used for personalized advertising by Google)."
+    },
+    "footerSignIn": {
+      "header": "Questions? Contact us.",
+      "links": [
+        {
+          "name": "FAQ",
+          "link": "#"
+        },
+        {
+          "name": "Help Center",
+          "link": "#"
+        },
+        {
+          "name": "Terms of Use",
+          "link": "#"
+        },
+        {
+          "name": "Privacy",
+          "link": "#"
+        },
+        {
+          "name": "Cookie Preferences",
+          "link": "#"
+        },
+        {
+          "name": "Corporate Information",
+          "link": "#"
+        }
+      ]
+    }
   }
 }

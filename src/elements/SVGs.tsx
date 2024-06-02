@@ -5,18 +5,19 @@ export type IconName =
   | "caretDown"
   | "plusBig"
   | "plusSmall"
-  | "reject";
+  | "reject"
+  | "checkboxChecked";
 
 export function SVGs({
   name,
-  viewbox = "0 0 16 16",
+  viewBox = "0 0 16 16",
   height = 16,
   width = 16,
   className,
   styles,
 }: {
   name: IconName;
-  viewbox?: string;
+  viewBox?: string;
   height?: number;
   width?: number;
   className?: string;
@@ -68,12 +69,20 @@ export function SVGs({
         fill="currentColor"
       ></path>
     ),
+    checkboxChecked: (
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M13.4696 3.46973L14.5303 4.53039L6.53026 12.5304C6.23737 12.8233 5.7625 12.8233 5.4696 12.5304L1.4696 8.53039L2.53026 7.46973L5.99993 10.9394L13.4696 3.46973Z"
+        fill="black"
+      ></path>
+    ),
   };
 
   return (
     <svg
       role="img"
-      viewBox={viewbox}
+      viewBox={viewBox}
       aria-label={name}
       height={height}
       width={width}

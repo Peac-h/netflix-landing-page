@@ -1,5 +1,5 @@
 import "./Main.scss";
 
-export function Main({ children }: { children: React.ReactNode }) {
-  return <main className="main">{children}</main>;
+export function Main(props: { children: React.ReactNode }) {
+  return <main className="main">{props.children}</main>;
 }

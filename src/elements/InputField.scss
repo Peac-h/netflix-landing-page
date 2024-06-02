@@ -15,7 +15,7 @@
     position: absolute;
     top: 1.5rem;
     left: 1.5rem;
-    width: 85%;
+    width: 88%;
     text-align: left;
 
     color: var(--col-white-light);
@@ -41,6 +41,10 @@
     fill: currentcolor;
     min-width: 20rem;
     width: 100%;
+
+    @media screen and (max-width: 600px) {
+      min-width: 0;
+    }
   }
 
   &-element {
@@ -92,5 +96,19 @@
 
   &-valid {
     border-color: var(--col-green);
+  }
+
+  &--login-page {
+    .input-field-label {
+      @media screen and (max-width: 600px) {
+        top: 1.5rem;
+      }
+    }
+
+    .input-field-element {
+      @media screen and (max-width: 600px) {
+        max-height: 5.4rem;
+      }
+    }
   }
 }

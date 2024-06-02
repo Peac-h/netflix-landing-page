@@ -8,6 +8,11 @@
   }
 }
 
+@mixin regular-header {
+  font-size: 3.2rem;
+  font-weight: 700;
+}
+
 @mixin regular-paragraph {
   font-size: 2.4rem;
   font-weight: 400;
