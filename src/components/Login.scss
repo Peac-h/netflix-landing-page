@@ -18,7 +18,7 @@
     justify-content: center;
     gap: 2.2rem;
     flex-grow: 1;
-    margin: 0.4rem auto 4.96rem;
+    margin: 0.4rem auto;
     padding: 4.8rem 6.8rem;
     background-color: var(--col-black-lighter);
     border-radius: 0.4rem;
@@ -27,12 +27,16 @@
       min-height: 0;
       width: 100%;
       max-width: 100%;
-      margin-bottom: 30px;
       padding: 0 5%;
     }
 
     &-wrapper {
       margin-bottom: auto;
+      padding-bottom: 4.6rem;
+
+      @media screen and (max-width: 600px) {
+        padding-bottom: 2.6rem;
+      }
     }
 
     &-heading {
@@ -53,7 +57,7 @@
       }
 
       &-message {
-        font-size: 13px;
+        @include tiny-paragraph;
         color: var(--col-white-light);
         text-align: center;
       }
@@ -106,14 +110,19 @@
 
       .recaptcha {
         color: var(--col-gray);
-        font-size: 13px;
+        @include tiny-paragraph;
         padding: 8px 0 0;
         display: flex;
         flex-direction: column;
         gap: 1.3rem;
 
-        @media screen and (max-width: 555px) {
-          gap: 2.9rem;
+        &-info {
+          .visible {
+            visibility: visible;
+          }
+          .hidden {
+            visibility: hidden;
+          }
         }
 
         &-details {

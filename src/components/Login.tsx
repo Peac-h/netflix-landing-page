@@ -132,14 +132,14 @@ function LoginFooter(props: {
       <div className="recaptcha">
         <div className="recaptcha-info">
           {t("signInPage.form.recaptchaInfo")}&nbsp;
-          {!props.learnMore && (
+          <span className={props.learnMore ? "hidden" : "visible"}>
             <Button
               variant="learnMore"
               onClick={() => props.setLearnMore((m) => !m)}
             >
               {t("signInPage.form.buttons.learnMore")}
             </Button>
-          )}
+          </span>
         </div>
 
         <div
@@ -176,18 +176,18 @@ function LoginOverlay() {
       {i18n.language === "en" ? (
         <img
           className="login-overlay-image"
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/31ef2c5c-3d08-47d5-b7a9-f29e4f4f893d/66936feb-6c3b-45f9-94fe-94016d3b245e/GE-en-20240506-POP_SIGNUP_TWO_WEEKS-perspective_WEB_ee164ed0-9331-47ab-8299-4331bc89fe99_small.jpg"
+          src="https://raw.githubusercontent.com/Peac-h/netflix-landing-page/main/src/assets/login/Login-bg--small.jpg"
           srcSet="
-    https://assets.nflxext.com/ffe/siteui/vlv3/31ef2c5c-3d08-47d5-b7a9-f29e4f4f893d/66936feb-6c3b-45f9-94fe-94016d3b245e/GE-en-20240506-POP_SIGNUP_TWO_WEEKS-perspective_WEB_ee164ed0-9331-47ab-8299-4331bc89fe99_small.jpg 1000w, 
-    https://assets.nflxext.com/ffe/siteui/vlv3/31ef2c5c-3d08-47d5-b7a9-f29e4f4f893d/66936feb-6c3b-45f9-94fe-94016d3b245e/GE-en-20240506-POP_SIGNUP_TWO_WEEKS-perspective_WEB_ee164ed0-9331-47ab-8299-4331bc89fe99_medium.jpg 1500w, 
-    https://assets.nflxext.com/ffe/siteui/vlv3/31ef2c5c-3d08-47d5-b7a9-f29e4f4f893d/66936feb-6c3b-45f9-94fe-94016d3b245e/GE-en-20240506-POP_SIGNUP_TWO_WEEKS-perspective_WEB_ee164ed0-9331-47ab-8299-4331bc89fe99_large.jpg 1800w"
+          https://raw.githubusercontent.com/Peac-h/netflix-landing-page/main/src/assets/login/Login-bg--small.jpg 1000w, 
+          https://raw.githubusercontent.com/Peac-h/netflix-landing-page/main/src/assets/login/Login-bg--medium.jpg 1500w, 
+          https://raw.githubusercontent.com/Peac-h/netflix-landing-page/main/src/assets/login/Login-bg--large.jpg 1800w"
           alt=""
         />
       ) : (
         <img
           className="login-overlay-image"
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/31ef2c5c-3d08-47d5-b7a9-f29e4f4f893d/04c978c9-7846-4802-bb5d-3ecaede54e94/GE-ru-20240506-POP_SIGNUP_TWO_WEEKS-perspective_WEB_7be55528-4261-4859-bf89-512cd35149ce_small.jpg"
-          srcSet="https://assets.nflxext.com/ffe/siteui/vlv3/31ef2c5c-3d08-47d5-b7a9-f29e4f4f893d/04c978c9-7846-4802-bb5d-3ecaede54e94/GE-ru-20240506-POP_SIGNUP_TWO_WEEKS-perspective_WEB_7be55528-4261-4859-bf89-512cd35149ce_small.jpg 1000w, https://assets.nflxext.com/ffe/siteui/vlv3/31ef2c5c-3d08-47d5-b7a9-f29e4f4f893d/04c978c9-7846-4802-bb5d-3ecaede54e94/GE-ru-20240506-POP_SIGNUP_TWO_WEEKS-perspective_WEB_7be55528-4261-4859-bf89-512cd35149ce_medium.jpg 1500w, https://assets.nflxext.com/ffe/siteui/vlv3/31ef2c5c-3d08-47d5-b7a9-f29e4f4f893d/04c978c9-7846-4802-bb5d-3ecaede54e94/GE-ru-20240506-POP_SIGNUP_TWO_WEEKS-perspective_WEB_7be55528-4261-4859-bf89-512cd35149ce_large.jpg 1800w"
+          src="https://raw.githubusercontent.com/Peac-h/netflix-landing-page/main/src/assets/login/Login-bg--small-ru.jpeg"
+          srcSet="https://raw.githubusercontent.com/Peac-h/netflix-landing-page/main/src/assets/login/Login-bg--small-ru.jpeg 1000w, https://raw.githubusercontent.com/Peac-h/netflix-landing-page/main/src/assets/login/Login-bg--medium-ru.jpeg 1500w, https://raw.githubusercontent.com/Peac-h/netflix-landing-page/main/src/assets/login/Login-bg--large-ru.jpeg 1800w"
           alt=""
         ></img>
       )}

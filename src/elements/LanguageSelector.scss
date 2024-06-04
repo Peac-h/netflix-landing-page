@@ -9,6 +9,9 @@
 
   &-button {
     position: relative;
+    display: flex;
+    align-items: center;
+    width: max-content;
   }
 
   &-elements {
@@ -27,31 +30,34 @@
       outline-offset: 3px;
       border-radius: 3px;
     }
-
-    @media screen and (max-width: 600px) {
-      width: 1rem;
-      padding: 0.5rem 3.1rem;
-    }
   }
 
   &-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: absolute;
     pointer-events: none;
     height: 1.6rem;
     width: 1.6rem;
 
     &--left {
-      top: 0.6rem;
       left: 1.2rem;
     }
 
     &--right {
-      left: 10.75rem;
-      top: 0.7rem;
+      padding-top: 2px;
+      right: 13px;
+    }
+  }
+}
 
-      @media screen and (max-width: 600px) {
-        left: 3.5rem;
-      }
+// Shrink for the header only
+.header-bar-buttons-container {
+  .language-selector-elements {
+    @media screen and (max-width: 600px) {
+      width: 1rem;
+      padding: 0.5rem 3.1rem;
     }
   }
 }
