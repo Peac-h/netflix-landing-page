@@ -3,6 +3,7 @@
 
 .feature {
   position: relative;
+  display: flex;
 
   &-content {
     @include main-layout;
