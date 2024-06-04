@@ -17,11 +17,6 @@
     min-width: 1rem;
     appearance: none;
     background: transparent;
-
-    &:hover ~ .checkbox-container {
-      background-color: var(--col-white-light);
-      border-color: var(--col-black);
-    }
   }
 
   .checkbox-container {
@@ -35,6 +30,7 @@
     border-radius: 0.2rem;
     color: transparent;
     position: relative;
+    cursor: pointer;
 
     transition-property: background-color, border-color, border-width, color;
     transition-duration: 250ms;
@@ -49,5 +45,12 @@
       background-color: var(--col-white);
       border: none;
     }
+  }
+
+  &:hover .checkbox-container.is-checked {
+    background-color: var(--col-white-light);
+  }
+  &:hover .checkbox-container {
+    border-color: var(--col-white);
   }
 }

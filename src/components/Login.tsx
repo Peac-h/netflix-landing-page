@@ -160,8 +160,8 @@ function LoginFooter(props: {
             className="recaptcha-link"
           >
             {t("signInPage.form.buttons.termsOfUse")}
-          </a>{" "}
-          {t("signInPage.form.recaptchaDetailsPartTwo")}
+          </a>
+          , {t("signInPage.form.recaptchaDetailsPartTwo")}
         </div>
       </div>
     </div>
