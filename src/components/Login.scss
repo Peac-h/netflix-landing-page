@@ -76,8 +76,6 @@
       }
 
       &-forgot-email {
-        margin-bottom: 2.95rem;
-
         &--ru {
           text-align: left;
           @media screen and (max-width: 600px) {
@@ -113,6 +111,10 @@
         display: flex;
         flex-direction: column;
         gap: 1.3rem;
+
+        @media screen and (max-width: 555px) {
+          gap: 2.9rem;
+        }
 
         &-details {
           opacity: 0;
