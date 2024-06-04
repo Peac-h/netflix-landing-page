@@ -2,19 +2,22 @@
 @import "../styles/fonts.scss";
 
 .footer {
-  @include main-layout;
   position: relative;
-  margin: auto;
-  padding: 7.2rem 3.2rem;
 
   @include smallest-paragraph;
   color: var(--col-white-light);
 
-  @media screen and (max-width: 960px) {
-    padding: 3.2rem;
-  }
-  @media screen and (max-width: 600px) {
-    padding: 3.2rem 2.4rem;
+  &-content {
+    @include main-layout;
+    margin: auto;
+    padding: 7.2rem 3.2rem;
+
+    @media screen and (max-width: 960px) {
+      padding: 3.2rem;
+    }
+    @media screen and (max-width: 600px) {
+      padding: 3.2rem 2.4rem;
+    }
   }
 
   & a {
@@ -62,13 +65,5 @@
     &--login-page {
       margin-bottom: 0.5rem;
     }
-  }
-}
-
-.sign-in-footer {
-  width: 100%;
-
-  @media screen and (max-width: 600px) {
-    border-top: 1px solid rgba(128, 128, 128, 0.7);
   }
 }

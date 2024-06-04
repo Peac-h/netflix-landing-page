@@ -8,10 +8,6 @@ import "./Login.scss";
 import { useTranslation } from "react-i18next";
 import { Link, useParams } from "react-router-dom";
 
-// inputs
-// double check
-// bg sources
-
 function LoginHeader() {
   const { lang } = useParams();
 
@@ -211,29 +207,35 @@ export function Login() {
     <div className="login">
       <LoginHeader />
 
-      <div className="login-content">
-        <div className="login-content-header">
-          <h1 className="login-content-heading">
-            {t("signInPage.form.header")}
-          </h1>
-        </div>
+      <div className="login-content-wrapper">
+        <div className="login-content">
+          <div className="login-content-header">
+            <h1 className="login-content-heading">
+              {t("signInPage.form.header")}
+            </h1>
+          </div>
 
-        <LoginForm
-          useSignInCode={useSignInCode}
-          setUsesignInCode={setUsesignInCode}
-          error={error}
-          setError={setError}
-          inputRef={inputRef}
-        />
-        <LoginFooter
-          rememberMeOn={rememberMeOn}
-          setRememberMeOn={setRememberMeOn}
-          learnMore={learnMore}
-          setLearnMore={setLearnMore}
-        />
+          <LoginForm
+            useSignInCode={useSignInCode}
+            setUsesignInCode={setUsesignInCode}
+            error={error}
+            setError={setError}
+            inputRef={inputRef}
+          />
+
+          <LoginFooter
+            rememberMeOn={rememberMeOn}
+            setRememberMeOn={setRememberMeOn}
+            learnMore={learnMore}
+            setLearnMore={setLearnMore}
+          />
+        </div>
       </div>
 
-      <FooterSignIn />
+      <div className="login-footer">
+        <FooterSignIn />
+      </div>
+
       <LoginOverlay />
     </div>
   );

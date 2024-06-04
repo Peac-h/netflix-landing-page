@@ -13,7 +13,7 @@ function FooterContent(props: {
   const { t } = useTranslation();
 
   return (
-    <footer className={`footer ${props.isSignInPage ? "sign-in-footer" : ""}`}>
+    <footer className="footer">
       <div className="footer-content">
         <div className="footer-item-container">
           <div

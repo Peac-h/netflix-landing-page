@@ -14,7 +14,6 @@
   &-elements {
     appearance: none;
     font: inherit;
-    font-family: "helvetica neue" !important;
     color: inherit;
     background: transparent;
     border: 1px solid var(--col-gray-light);
@@ -42,13 +41,13 @@
     width: 1.6rem;
 
     &--left {
-      top: 0.63rem;
+      top: 0.6rem;
       left: 1.2rem;
     }
 
     &--right {
-      left: 10.53rem;
-      top: 0.73rem;
+      left: 10.75rem;
+      top: 0.7rem;
 
       @media screen and (max-width: 600px) {
         left: 3.5rem;
