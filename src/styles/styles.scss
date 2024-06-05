@@ -39,12 +39,6 @@
   font-style: normal;
 }
 @font-face {
-  font-family: "helvetica neue";
-  src: url(../../src/font/Helvetica-Neue-Font/Helvetica_Neue_Medium_Extended);
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
   font-family: "sans";
   src: url(../../src/font/NetflixSans_W_Bd.woff2);
   font-weight: 700;
@@ -76,7 +70,7 @@ html {
 }
 
 body {
-  font-family: "sans";
+  font-family: "sans", "Helvetica Neue", sans-serif;
   @include regular-paragraph;
   background: var(--col-black);
   max-width: 100%;
