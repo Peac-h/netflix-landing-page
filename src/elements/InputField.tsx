@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { SVGs } from "./SVGs";
 import "./InputField.scss";
+import { useTranslation } from "react-i18next";
 
 const validateEmail = (email: string): boolean => {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -14,51 +15,53 @@ export function InputField(props: {
   name: string;
   label: string;
   required: boolean;
+  value: null | string;
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   error: string | null;
   setError: React.Dispatch<React.SetStateAction<string | null>>;
-  inputRef: React.RefObject<HTMLInputElement>;
   type?: string;
   minLength?: number;
   maxLength?: number;
   autoComplete?: string;
   className?: string;
+  inputRef?: React.RefObject<HTMLInputElement>;
 }) {
-  const [value, setValue] = useState<null | string>(null);
   const [isFocused, setIsFocused] = useState(false);
   const [isValid, setIsValid] = useState(false);
+  const { t } = useTranslation();
 
   useEffect(() => {
-    if (!value) return;
+    if (!props.value || isFocused) return;
+
+    let valid = true;
 
     if (props.type === "email") {
-      setIsValid(validateEmail(value));
+      valid = validateEmail(props.value);
+      setIsValid(valid);
+      props.setError(valid ? null : t("form.emailError"));
     } else if (props.type === "password") {
-      setIsValid(validatePassword(value));
+      valid = validatePassword(props.value);
+      setIsValid(valid);
+      props.setError(valid ? null : t("form.passwordError"));
     }
-
-    if (!isValid) {
-      props.setError(`Invalid ${props.type}`);
-    } else {
-      props.setError(null);
-    }
-  }, [props, isValid, value]);
+  }, [props, isFocused, t]);
 
   return (
-    <div
-      className={`input-field-container ${props.className} ${
-        props.error ? "input-field-error" : ""
-      } 
-      ${isValid ? "input-field-valid" : ""}
-      `}
-    >
+    <div className={`input-field-container ${props.className}`}>
       <label
-        htmlFor={`${name}Input`}
-        className="input-field-label"
-        style={isFocused || value ? { top: ".8rem", fontSize: "1.2rem" } : {}}
+        htmlFor={`${props.name}Input`}
+        className={`input-field-label ${
+          isFocused || props.value ? "is-focused" : ""
+        }`}
       >
         {props.label}
       </label>
-      <div className="input-field-elements">
+      <div
+        className={`input-field-elements ${
+          props.error ? "input-field-error" : ""
+        } 
+      ${isValid ? "input-field-valid" : ""}`}
+      >
         <input
           autoComplete={props.autoComplete || props.name}
           minLength={props.minLength}
@@ -66,20 +69,21 @@ export function InputField(props: {
           type={props.type}
           name={props.name}
           id={`${props.name}Input`}
-          value={value ?? undefined}
-          onChange={(e) => setValue(e.target.value)}
+          value={props.value ?? ""}
+          onChange={props.onChange}
           onFocus={() => setIsFocused(true)}
           onBlur={() => setIsFocused(false)}
           className="input-field-element"
           required={props.required}
           ref={props.inputRef}
         />
-        {props.error && (
-          <span id={`${props.name}Error`} className="input-field-error-text">
-            <SVGs name="reject" /> {props.error}
-          </span>
-        )}
       </div>
+      {props.error && (
+        <div id={`${props.name}Error`} className="input-field-error-text">
+          <SVGs name="reject" />
+          {props.error}
+        </div>
+      )}
     </div>
   );
 }

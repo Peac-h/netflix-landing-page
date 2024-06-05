@@ -6,7 +6,8 @@
   "form": {
     "header": "Ready to watch? Enter your email to create or restart your membership.",
     "emailLabel": "Email address",
-    "emailError": "Invalid email address"
+    "emailError": "Please enter a valid email address.",
+    "passwordError": "Your password must contain between 4 and 60 characters."
   },
   "buttons": {
     "getStartedBtn": "Get Started",

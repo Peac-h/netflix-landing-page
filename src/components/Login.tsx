@@ -25,10 +25,16 @@ function LoginHeader() {
 function LoginForm(props: {
   useSignInCode: boolean;
   setUsesignInCode: React.Dispatch<React.SetStateAction<boolean>>;
-  error: string | null;
-  setError: React.Dispatch<React.SetStateAction<string | null>>;
-  inputRef: React.RefObject<HTMLInputElement>;
 }) {
+  const [email, setEmail] = useState<string | null>(null);
+  const [password, setPassword] = useState<string | null>(null);
+
+  const [emailError, setEmailError] = useState<null | string>(null);
+  const [passwordError, setPasswordError] = useState<null | string>(null);
+
+  const inputRef = useRef<HTMLInputElement>(null);
+  const formRef = useRef<HTMLFormElement>(null);
+
   const { t } = useTranslation();
   const { i18n } = useTranslation();
 
@@ -37,16 +43,23 @@ function LoginForm(props: {
   };
 
   return (
-    <form className="login-form" onSubmit={handleSubmit} noValidate>
+    <form
+      className="login-form"
+      onSubmit={handleSubmit}
+      noValidate
+      ref={formRef}
+    >
       <InputField
         name="email"
         label={t("signInPage.form.emailOrMobileLabel")}
         type="email"
-        error={props.error}
-        setError={props.setError}
-        required
-        inputRef={props.inputRef}
+        value={email}
+        onChange={(event) => setEmail(event.target.value)}
+        error={emailError}
+        setError={setEmailError}
+        inputRef={inputRef}
         className="input-field--login-page"
+        required
       />
       {props.useSignInCode ? (
         <p className="login-form-message">{t("signInPage.form.message")}</p>
@@ -55,11 +68,13 @@ function LoginForm(props: {
           name="password"
           label={t("signInPage.form.passwordLabel")}
           type="password"
-          error={props.error}
-          setError={props.setError}
-          required
-          inputRef={props.inputRef}
+          value={password}
+          onChange={(event) => setPassword(event.target.value)}
+          error={passwordError}
+          setError={setPasswordError}
+          inputRef={inputRef}
           className="input-field--login-page"
+          required
         />
       )}
 
@@ -196,8 +211,6 @@ function LoginOverlay() {
 }
 
 export function Login() {
-  const [error, setError] = useState<null | string>(null);
-  const inputRef = useRef<HTMLInputElement>(null);
   const [rememberMeOn, setRememberMeOn] = useState(true);
   const [learnMore, setLearnMore] = useState(false);
   const [useSignInCode, setUsesignInCode] = useState(false);
@@ -218,9 +231,6 @@ export function Login() {
           <LoginForm
             useSignInCode={useSignInCode}
             setUsesignInCode={setUsesignInCode}
-            error={error}
-            setError={setError}
-            inputRef={inputRef}
           />
 
           <LoginFooter
