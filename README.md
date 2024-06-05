@@ -15,13 +15,13 @@ Additionally, the page supports two languages, English and Russian, utilizing `r
 
 [Link to Page](https://nf-by-peach.netlify.app/)
 
-![Netflix Landing Page English - Desktop](https://raw.githubusercontent.com/Peac-h/netflix-landing-page/main/DesktopEn.png)
-
 ![Netflix Landing Page Big Screens English - Desktop](https://raw.githubusercontent.com/Peac-h/netflix-landing-page/main/BigScreensEn.png)
 
-![Netflix Landing Page Russian - Desktop](https://raw.githubusercontent.com/Peac-h/netflix-landing-page/main/DesktopRu.png)
-
 ![Netflix Landing Page Big Screens Russian - Desktop](https://raw.githubusercontent.com/Peac-h/netflix-landing-page/main/BigScreensRu.png)
+
+![Netflix Landing Page Login English - Desktop](https://raw.githubusercontent.com/Peac-h/netflix-landing-page/main/Screenshot%202024-06-05%20at%205.01.11%E2%80%AFPM.png)
+
+![Netflix Landing Page Login Russian - Desktop](https://raw.githubusercontent.com/Peac-h/netflix-landing-page/main/Screenshot%202024-06-05%20at%205.02.01%E2%80%AFPM.png)
 
 ## Author
 
