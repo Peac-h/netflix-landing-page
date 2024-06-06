@@ -21,7 +21,9 @@ const Checkbox = (props: {
       >
         <SVGs name="checkboxChecked" />
       </div>
-      <label htmlFor={props.name}>{props.label}</label>
+      <label htmlFor={props.name} className="checkbox-label">
+        {props.label}
+      </label>
     </div>
   );
 };

@@ -2,48 +2,53 @@
   display: flex;
   align-items: center;
   gap: 1.2rem;
-  padding-bottom: 2.5px;
-  padding-top: 0.5px;
   position: relative;
+  margin-bottom: 1.6rem;
 
-  .checkbox-input {
-    position: absolute;
-    width: 4.4rem;
-    height: 4.4rem;
-    left: -1.3rem;
-    cursor: pointer;
-    border-radius: 0.2rem;
-    min-height: 1rem;
-    min-width: 1rem;
-    appearance: none;
-    background: transparent;
-  }
-
-  .checkbox-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 1.8rem;
-    width: 1.8rem;
-    background-color: var(--col-black);
-    border: 1px solid var(--col-gray-light);
-    border-radius: 0.2rem;
-    color: transparent;
-    position: relative;
-    cursor: pointer;
-
-    transition-property: background-color, border-color, border-width, color;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.5, 0, 0.1, 1);
-
-    svg {
-      fill: var(--col-black);
-      width: 1.2rem;
+  .checkbox {
+    &-input {
+      position: absolute;
+      width: 4.4rem;
+      height: 4.4rem;
+      left: -1.3rem;
+      cursor: pointer;
+      border-radius: 0.2rem;
+      min-height: 1rem;
+      min-width: 1rem;
+      appearance: none;
+      background: transparent;
     }
 
-    &.is-checked {
-      background-color: var(--col-white);
-      border: none;
+    &-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 1.8rem;
+      width: 1.8rem;
+      background-color: var(--col-black);
+      border: 1px solid var(--col-gray-light);
+      border-radius: 0.2rem;
+      color: transparent;
+      position: relative;
+      cursor: pointer;
+
+      transition-property: background-color, border-color, border-width, color;
+      transition-duration: 250ms;
+      transition-timing-function: cubic-bezier(0.5, 0, 0.1, 1);
+
+      svg {
+        fill: var(--col-black);
+        width: 1.2rem;
+      }
+
+      &.is-checked {
+        background-color: var(--col-white);
+        border: none;
+      }
+    }
+
+    &-label {
+      line-height: 1.5;
     }
   }
 
