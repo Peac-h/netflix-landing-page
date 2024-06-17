@@ -23,11 +23,12 @@ function HeaderButtons() {
   return (
     <div className="header-bar-buttons-container">
       <LanguageSelector />
-      <Button variant="signIn" className="is-small">
-        <span>
-          <Link to={`/${lang}/login`}>{t("buttons.signInBtn")}</Link>
-        </span>
-      </Button>
+
+      <Link to={`/${lang}/login`}>
+        <Button variant="signIn" className="is-small">
+          {t("buttons.signInBtn")}
+        </Button>
+      </Link>
     </div>
   );
 }
